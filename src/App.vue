@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <a-form :form="form">
+      <a-form-item label="field">
+        <a-input style="width:300px;margin:0 auto;" v-decorator="['name']"/>
+      </a-form-item>
+    </a-form>
   </div>
 </template>
 
@@ -14,7 +17,9 @@ import HelloWorld from './components/HelloWorld.vue';
     HelloWorld,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  public form: any = this.$form.createForm(this);
+}
 </script>
 
 <style>
